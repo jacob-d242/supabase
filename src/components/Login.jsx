@@ -1,10 +1,9 @@
 import React, { useState} from 'react'
 import { supabase } from '../constants/supaBaseClient'
 
-export default function Auth() {
+export default function Login() {
   const [loading, setLoading] = useState(false)
   const [email, setEmail] = useState('')
-
   const handleLogin = async (e) => {
     e.preventDefault()
 
