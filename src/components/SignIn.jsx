@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-//import { supabase } from '../constants/supaBaseClient'
+import { supabase } from '../constants/supaBaseClient'
 
 export default function () {
   const [loading, setLoading] = useState(false)
