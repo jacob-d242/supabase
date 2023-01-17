@@ -1,7 +1,8 @@
-//import './index.css'
-import React,{ useState, useEffect } from 'react'
-import SignIn from './components/SignIn'
-//import { supabase } from './constants/supaBaseClient'
+import './index.css'
+import { useState, useEffect } from 'react'
+import { supabase } from './SupaBaseClient'
+import Account from './Account'
+import Login from './Login'
 
 export default function App() {
   const [session, setSession] = useState(null)
@@ -18,10 +19,8 @@ export default function App() {
 
   return (
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
-      <h1>moracha</h1>
-      {/*<SignIn />*/}
-      <h1>{process.env.REACT_APP_SUPABASE_ANON_KEY }</h1>
-      {/*{!session ? <Login /> : <Account key={session.user.id} session={session} />}*/}
+    
+      {!session ? <Login /> : <Account key={session.user.id} session={session} />}
     </div>
   )
 }
