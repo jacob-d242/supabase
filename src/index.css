@@ -30,7 +30,9 @@
 .FormWrapAcc {
   padding: 5rem;
 }
-
+img{
+  border-radius: 200px;
+}
 .FormWrap {
   border: 1px solid #cccccc;
   padding: 5rem;

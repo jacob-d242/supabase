@@ -54,7 +54,6 @@ export default function Avatar({ url, size, onUpload }) {
       <img
         src={avatarUrl ? avatarUrl : `https://place-hold.it/${size}x${size}`}
         alt={avatarUrl ? 'Avatar' : 'No image'}
-        className="avatar image"
         style={{ height: size, width: size }}
       />
       {uploading ? (
