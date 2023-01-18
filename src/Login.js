@@ -21,24 +21,24 @@ export default function Login() {
     }
 
     return (
-        <div className="row flex-center flex">
-            <div className="col-6 form-widget" aria-live="polite">
-                <h1 className="header">Magic Login Link with Supabase</h1>
-                <p className="description">Enter Your Email to SignUp Below</p>
+        <div className="Container">
+            <div className="FormWrap" >
+                <h1 className="Heading">Magic Login Link with  + React</h1>
+                <p className="Description">Enter Your Email to SignUp Below</p>
                 {loading ? (
                     'Sending magic link...'
                 ) : (
                     <form onSubmit={handleLogin}>
                         <label htmlFor="email">Email</label>
-                        <input
+                            <input
+                                className='InputField'
                             id="email"
-                            className="inputField"
                             type="email"
                             placeholder="Your email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <button className="button block" aria-live="polite">
+                        <button className="Button" aria-live="polite">
                             Get Link
                         </button>
                     </form>

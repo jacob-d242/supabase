@@ -50,7 +50,7 @@ export default function Avatar({ url, size, onUpload }) {
   }
 
   return (
-    <div style={{ width: size }} aria-live="polite">
+    <div className="FormWrapAcc">
       <img
         src={avatarUrl ? avatarUrl : `https://place-hold.it/${size}x${size}`}
         alt={avatarUrl ? 'Avatar' : 'No image'}
@@ -61,10 +61,10 @@ export default function Avatar({ url, size, onUpload }) {
         'Uploading...'
       ) : (
         <>
-          <label className="button primary block" htmlFor="single">
+          <label className="Button" htmlFor="single">
             Upload an avatar
           </label>
-          <div className="visually-hidden">
+          <div className="Button">
             <input
               type="file"
               id="single"

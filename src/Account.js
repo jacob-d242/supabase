@@ -67,30 +67,26 @@ export default function Account({ session }) {
     }
 
     return (
-        <div  className='flex-right flex'>
-            <div className='topTable'>
+        <div className='ContainerAcc'>   
+        <div className="FormWrap">    
                 <Avatar
                     url={avatar_url}
-                    size={100}
+                    size={150}
                     onUpload={(url) => {
                         setAvatarUrl(url)
                         updateProfile({ username, company, avatar_url: url })
                     }}
                 />
-                <button type="button" className="button primary block" onClick={() => supabase.auth.signOut()}>
-                    Sign Out
-                </button>
-            </div>
-            
+           
             {loading ? (
                 'Saving ...'
             ) : (
-                <form onSubmit={updateProfile} className="form-widget">
+                <form onSubmit={updateProfile} >
                     <div>Email: {session.user.email}</div>
                     <div>
                         <label htmlFor="username">Name</label>
                         <input
-                            className="form-Inputs"
+                            className="InputField"
                             id="username"
                             type="text"
                             value={username || ''}
@@ -99,22 +95,26 @@ export default function Account({ session }) {
                     </div>
                     <div>
                         <label htmlFor="website">Organization</label>
-                        <input
+                            <input
+                            className='InputField'
                             id="website"
                             type="text"
                             value={company || ''}
                             onChange={(e) => setCompany(e.target.value)}
                         />
                     </div>
-                    <div>
-                        <button className="button primary block" disabled={loading}>
-                            Update profile
+                    <div className="form-btn">
+                        <button className="Buttonm" disabled={loading}>
+                            Update 
+                        </button>
+                        <button type="button" className="Buttonm" onClick={() => supabase.auth.signOut()}>
+                            Sign Out
                         </button>
                     </div>
                 </form>
             )}
-            
-        </div>
+            </div>
+            </div>
     )
 }
 
